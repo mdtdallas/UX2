@@ -60,6 +60,10 @@
     margin: 8px 10px 0 5px;
 }
 
+.navbar .iconDark {
+    margin-bottom: 5px;
+}
+
 .questionMark {
     margin-bottom: 5px;
 }

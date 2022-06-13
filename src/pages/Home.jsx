@@ -52,8 +52,7 @@ function Home() {
           className="m-3 mx-auto d-block img-thumbnail shadow rounded-circle"
           alt="avatar"
           width="500em"
-        ></img>
-        <i className="fa-solid fa-pen-to-square btn"></i>
+        />
         <Card className="shadow m-3 p-2" key={email}>
           <Row>
             <Col>

@@ -33,6 +33,7 @@ const CatDetailsCard = () => {
     if (data.status) alert(data.status);
     if (data.warning) alert(data.warning);
     if (data.error) alert(data.error);
+    window.location.reload();
   }
 
   return (

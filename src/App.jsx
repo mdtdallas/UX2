@@ -74,7 +74,7 @@ function App() {
                         <QuestionMarkIcon className="questionMark" />
                       </Nav.Link>
                       <Nav.Link className="item">
-                        <DarkModeIcon className="icon" onClick={()=> dispatch({type: "TOGGLE"})}/>
+                        <DarkModeIcon className="iconDark" onClick={()=> dispatch({type: "TOGGLE"})}/>
                       </Nav.Link>
                     </>
                   )}
