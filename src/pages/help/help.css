@@ -1,12 +1,12 @@
-img {
+.help img {
     width: 95vw;
     margin: 10px;
 }
 
-.helpContainer {
+.help .helpContainer {
     text-align: center;
 }
 
-p {
+.help p {
     padding: 10px;
 }
