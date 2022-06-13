@@ -61,17 +61,16 @@ function Shows() {
                     <Col>
                       <img
                         src={image}
-                        alt=""
-                        className="showImage m-4 me-6"
-                        width='40%'
+                        alt="Show Display image or logo"
+                        className="showImage"
                       />
                     </Col>
-                    <Col>
+                    <Col className="d-flex align-items-center justify-content-center">
                       <Row>
-                        <div className="fs-4 pt-2">{date}</div>
+                        <div className="fs-4 pt-2 text-center">{date}</div>
                       </Row>
                       <Row>
-                        <div className="fs-4 pt-2">{location}</div>
+                        <div className="fs-4 pt-2 text-center">{location}</div>
                       </Row>
                       <Button as={Link} to={`/show/2`} className="fs-4 mt-2">
                         Enter Show

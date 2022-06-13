@@ -37,7 +37,7 @@ const AwardCard = () => {
   return (
     <div>
       {awards && awards.map(({ id, title, year }) => (
-        <a href="/award/:id" className="rounded mx-3 mt-3 bg-light shadow card p-2 btn" key={id}>
+        <div className="rounded mx-3 mt-3 bg-light shadow card p-2 btn" key={id}>
         <Row>
           <Col>
             <i className="fa-solid fa-award"></i>
@@ -46,7 +46,7 @@ const AwardCard = () => {
           <Col>{year}</Col>
           <Col><i className="fa-solid fa-minus" onClick={() => handleDelete(id)}></i></Col>
         </Row>
-      </a>
+      </div>
       ))}
     </div>
   );
