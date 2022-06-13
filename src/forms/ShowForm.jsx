@@ -76,9 +76,6 @@ function ShowForm() {
         body: JSON.stringify(values)
       })
       .then((response) => {
-        if (!response.ok) {
-          throw new Error(`This is an HTTP error ${response.status}`);
-        }
         return response.json();
       })
       .then((data) => {

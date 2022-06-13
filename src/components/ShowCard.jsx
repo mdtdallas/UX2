@@ -37,6 +37,7 @@ function Shows() {
 
   return (
     <div>
+      
       {loading && (
         <div>
           <Spinner className="my-auto" />
@@ -48,37 +49,19 @@ function Shows() {
       <div>
         { shows.map(({ id, title, location, image, date }) => (
             <>
-              <Container key={id}>
-                <Card
-                  as={Link}
-                  to={`/show/2`}
-                  className="rounded-50 shadow mb-2 nav-link text-dark"
-                >
-                  <Row>
-                    <div className="text-center display-5">{title}</div>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <img
-                        src={image}
-                        alt="Show Display image or logo"
-                        className="showImage"
-                      />
-                    </Col>
-                    <Col className="align-items-center justify-content-center">
-                      <Row>
-                        <div className="fs-4 pt-2 text-center">{date}</div>
-                      </Row>
-                      <Row>
-                        <div className="fs-4 pt-2 text-center">{location}</div>
-                      </Row>
-                      <Button as={Link} to={`/show/2`} className="fs-4 mt-2">
-                        Enter Show
-                      </Button>
-                    </Col>
-                  </Row>
-                </Card>
-              </Container>
+            <div class="card shadow-md" as={Link} to={`/show/${id}`} key={id}>
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns={image} role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <h5 class="card-title">{title}</h5>
+            <div class="card-body">
+              <p class="card-text">Where:&nbsp;{location}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Enter Show</button>
+                </div>
+                <small class="text-muted">When:&nbsp;{date}</small>
+              </div>
+            </div>
+          </div>
             </>
           ))}
       </div>
@@ -87,3 +70,5 @@ function Shows() {
 }
 
 export default Shows;
+
+
