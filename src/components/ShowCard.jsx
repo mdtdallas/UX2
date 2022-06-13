@@ -65,7 +65,7 @@ function Shows() {
                         className="showImage"
                       />
                     </Col>
-                    <Col className="d-flex align-items-center justify-content-center">
+                    <Col className="align-items-center justify-content-center">
                       <Row>
                         <div className="fs-4 pt-2 text-center">{date}</div>
                       </Row>
