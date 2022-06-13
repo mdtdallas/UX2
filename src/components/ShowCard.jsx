@@ -49,8 +49,9 @@ function Shows() {
       <div>
         { shows.map(({ id, title, location, image, date }) => (
             <>
-            <div class="card shadow-md" as={Link} to={`/show/${id}`} key={id}>
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns={image} role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card shadow-md m-2" as={Link} to={`/show/${id}`} key={id}>
+              <img src={image} alt="Cat Show Title Cover" width="100%" height="225"/>
+            {/* <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns={image} role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> */}
             <h5 class="card-title">{title}</h5>
             <div class="card-body">
               <p class="card-text">Where:&nbsp;{location}</p>
