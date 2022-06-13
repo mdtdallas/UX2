@@ -49,8 +49,8 @@ function ShowForm() {
     judges: Yup.string().required('Judge is required').min(2, 'Must be more than 2 characters'),
     date: Yup.string().required('Date is required'),
     council: Yup.string().required('Council is required').min(2, 'Must be more than 2 characters'),
-    ticket_price: Yup.number().positive.required('Ticket price is required'),
-    ticket_count: Yup.number().positive.required('Ticket amount is required'),
+    ticket_price: Yup.number().positive().required('Ticket price is required'),
+    ticket_count: Yup.number().positive().required('Ticket amount is required'),
   })
   let formik = useFormik({
     initialValues: {
