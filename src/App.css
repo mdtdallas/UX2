@@ -1,0 +1,83 @@
+.dark {
+    background-color: rgba(106, 69, 110, 0.466);
+    color: rgb(253, 253, 253);
+}
+
+.App {
+    background-color: rgba(222, 199, 243, 0.226);
+    height: 100vh;
+}
+
+.dark .card {
+    background-color: rgb(73, 92, 109)!important;
+    color: white;
+}
+
+.dark span {
+    color: black;
+}
+
+.dark .navbar label {
+    color: black;
+}
+
+.App .navbar {
+    display: flex;
+}
+
+.navbar-expand {
+    justify-content: space-around;
+}
+
+.linkContainer {
+    justify-content: space-around;
+}
+
+.linkContainer a {
+    color: rgb(19, 18, 18);
+}
+
+.errorPage {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorContainer {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+}
+
+
+
+.navbar {
+    background-color: rgb(255, 255, 255)!important;
+}
+
+.navbar .icon {
+    margin: 8px 10px 0 5px;
+}
+
+.questionMark {
+    margin-bottom: 5px;
+}
+
+.addAward {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.spinner {
+    width: 300px!important;
+    height:300px!important;
+    margin: 10%;
+    margin-top: 40%;
+}
+
+.showImage {
+    width: 100%!important;
+    margin-right: 10px!important;
+}
