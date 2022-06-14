@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row, Container, Card, Button } from "react-bootstrap";
 import { Spinner } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -49,17 +48,17 @@ function Shows() {
       <div>
         { shows.map(({ id, title, location, image, date }) => (
             <>
-            <Link class="card shadow-md m-2 nav-link" to={`/show/${id}`} key={id}>
+            <Link class="card shadow-md m-2 nav-link p-0" to={`/show/${id}`} key={id}>
               <img src={image} alt="Cat Show Title Cover" width="100%" height="100%"/>
             {/* <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns={image} role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> */}
-            <h5 class="card-title text-center p-10">{title}</h5>
+            <div class="card-title text-center p-10 mt-20">{title}</div>
             <div class="card-body">
               <p class="card-text text-center">Where:&nbsp;{location}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Enter Show</button>
                 </div>
-                <small class="text-muted">When:&nbsp;{date}</small>
+                <small class="card-text">When:&nbsp;{date}</small>
               </div>
             </div>
           </Link>

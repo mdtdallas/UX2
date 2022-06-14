@@ -18,7 +18,7 @@ const CatDetailsCard = () => {
     .then((data) => {
       setCat(data);
     })
-  }, [])
+  }, []);
 
   async function handleDelete(id) {
     const res = await fetch(`https://proj2-api.herokuapp.com/api/catDelete/delete/${id}`, {
@@ -33,14 +33,14 @@ const CatDetailsCard = () => {
     if (data.status) alert(data.status);
     if (data.warning) alert(data.warning);
     if (data.error) alert(data.error);
-    window.location.reload();
+    if (data.status) window.location.reload();
   }
 
   return (
     <div className="">
       {cat && cat.map(({ id, name, breed, age, image, breeder }) => (
       <Card className="shadow m-3 p-2" key={id}>
-      <img src={image} width='80%' className='mt-3 mx-auto d-block img-thumbnail shadow rounded' alt='Cat Photo'/>
+      <img src={image} width='100%' className='mt-3 mx-auto d-block img-thumbnail rounded' alt='Cat Photo'/>
       <Row>
         <Col>
           <Card.Text className="fs-2">Name:</Card.Text>
