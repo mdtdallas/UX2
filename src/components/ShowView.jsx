@@ -105,12 +105,12 @@ function ShowView() {
           width="200em"
         />
         <Row>
+          <div className="display-3 text-center">{location}</div>
+        </Row>
+        <Row>
           <div className="display-3 text-center pt-5">
             {date}
           </div>
-        </Row>
-        <Row>
-          <div className="display-3 text-center">{location}</div>
         </Row>
         <Row>
           <div className="display-3 text-center">{council}</div>
@@ -119,7 +119,7 @@ function ShowView() {
           <div className="display-3 text-center">Judge: &nbsp;{judges}</div>
         </Row>
         <Row>
-          <div className="display-3 text-center">${ticket_price}</div>
+          <div className="display-3 text-center">Tickets: &nbsp;${ticket_price}</div>
         </Row>
         <Row>
           <Col className="mt-4">
