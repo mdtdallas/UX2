@@ -88,7 +88,7 @@ const NewAward = () => {
           <Col className="col-7">
             <Form.Control
               name="title"
-              pattern='[A-Za-z]{3}'
+              pattern='[a-zA-Z0-9\s]+{3}'
               onChange={formik.handleChange}
               value={formik.values.title}
               onBlur={formik.handleBlur}
@@ -106,6 +106,7 @@ const NewAward = () => {
             <Form.Control
               name="year"
               pattern='[0-9]{4,4}'
+              maxLength={4}
               onChange={formik.handleChange}
               value={formik.values.year}
               onBlur={formik.handleBlur}
