@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   const email = localStorage.getItem('email')
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -26,7 +26,7 @@ function Home() {
         return response.json();
       })
       .then((data) => {
-        setData(data);
+        if (data) setData(data);
         setError(null);
       })
       .catch((err) => {
@@ -36,7 +36,7 @@ function Home() {
       .finally(() => {
         setLoading(false);
       });
-  }, [email]);
+  }, []);
   
   return (
     <div>

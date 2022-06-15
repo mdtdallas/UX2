@@ -9,7 +9,8 @@ import './login.css';
 export default function Login() {
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
-  const [severity, setSeverity] = useState("success");
+  const [warning, setWarning] = useState('')
+  const [severity, setSeverity] = useState("");
   const [open, setOpen] = useState(false);
   let navigate = useNavigate();
 
@@ -33,7 +34,8 @@ export default function Login() {
       })
         .then((response) => response.json())
         .then((data) => {
-          if (!data.error) setStatus(data.status);
+          if (data.warning) setWarning(data.warning);
+          if (data.warning) setSeverity('warning');
           if (data.error) setError(data.error);
           if (data.error) setSeverity("error");
           localStorage.clear();
@@ -42,6 +44,9 @@ export default function Login() {
           localStorage.setItem('email', data.email);
           localStorage.setItem('userID', data.userID);
           localStorage.setItem('username', data.username);
+          if (data.status) setStatus(data.status);
+          if (data.status) setWarning('');
+          if (data.status) setSeverity('success');
           handleClick();
         });
     },
@@ -56,9 +61,11 @@ export default function Login() {
       return;
     }
     setOpen(false);
-    navigate("/");
+    if (status) {
+      navigate("/");
     window.location.href = '/'
     action();
+    }
   };
 
   const action = (
@@ -115,7 +122,7 @@ export default function Login() {
     </div>
     <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
       <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
-        {[status, error]}
+        {[status, warning, error]}
       </Alert>
     </Snackbar>
   </div>
