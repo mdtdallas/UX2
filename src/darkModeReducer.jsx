@@ -15,6 +15,7 @@ const DarkModeReducer = (state, action) => {
                 darkMode: !state.darkMode,
             }
         }
+        default: {}
     }
 }
 

@@ -71,6 +71,7 @@ function ShowView() {
     }
     setOpen(false);
     window.location.href = '/shows'
+    action();
   };
 
   const action = (
@@ -157,22 +158,7 @@ function ShowView() {
           <div className="p-3 ps-5 display-5">{council}</div>
         </Row>
         <Row>
-          <marquee
-            behavior="scroll"
-            direction="left"
-            className="pt-4 mb-4"
-          >
-            <img src={CatsNSW} alt="" className="pe-3" />
-            <img src={CatsNSW} alt="" className="pe-3" />
-            <img src={CatsNSW} alt="" className="pe-3" />
-            <img src={CatsNSW} alt="" className="pe-3" />
-            <img src={CatsNSW} alt="" className="pe-3" />
-            <img src={CatsNSW} alt="" className="pe-3" />
-            <img src={CatsNSW} alt="" className="pe-3" />
-            <img src={CatsNSW} alt="" className="pe-3" />
-            <img src={CatsNSW} alt="" className="pe-3" />
-            <img src={CatsNSW} alt="" className="pe-3" />
-          </marquee>
+        <img src={CatsNSW} alt="Sponsor" className="pe-3"/>
         </Row>
       </Container>
       ))}

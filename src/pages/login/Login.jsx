@@ -39,7 +39,9 @@ export default function Login() {
           localStorage.clear();
           localStorage.setItem("accessToken", data.accessToken);
           localStorage.setItem("userType", data.userType);
-          localStorage.setItem('email', data.email)
+          localStorage.setItem('email', data.email);
+          localStorage.setItem('userID', data.userID);
+          localStorage.setItem('username', data.username);
           handleClick();
         });
     },
@@ -56,6 +58,7 @@ export default function Login() {
     setOpen(false);
     navigate("/");
     window.location.href = '/'
+    action();
   };
 
   const action = (
@@ -78,6 +81,7 @@ export default function Login() {
     <h1>Login</h1>
     <div className="loginContainer">
       <input
+      placeholder="Email"
         name="email"
         type="email"
         onChange={formik.handleChange}
@@ -89,6 +93,7 @@ export default function Login() {
         <p>{formik.errors.email}</p>
       ) : null}
       <input
+      placeholder="Password"
         name="password"
         type="password"
         onChange={formik.handleChange}

@@ -2,7 +2,6 @@ import React from 'react'
 import AwardCard from '../components/AwardCard';
 import AwardsList from '../components/AwardsList';
 import CatDetailsCard from '../components/CatDetailsCard';
-import Cat1 from '../img/catnew.png';
 
 
 const CatProfile = () => {

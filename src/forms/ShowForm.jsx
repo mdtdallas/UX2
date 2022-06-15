@@ -23,6 +23,7 @@ function ShowForm() {
     }
     setOpen(false);
     window.location.href = '/shows'
+    action();
   };
 
   const action = (
@@ -45,9 +46,9 @@ function ShowForm() {
   let validationParams = Yup.object().shape({
     title: Yup.string().required('Name is required'),
     location: Yup.string().required('Location is required').min(2, 'Must be more than 2 characters'),
-    photo: Yup.string().required('Photo is required').min(2, 'Must be more than 2 characters'),
+    photo: Yup.string().url().required('Photo is required').min(2, 'Must be more than 2 characters'),
     judges: Yup.string().required('Judge is required').min(2, 'Must be more than 2 characters'),
-    date: Yup.string().required('Date is required'),
+    date: Yup.date().required('Date is required'),
     council: Yup.string().required('Council is required').min(2, 'Must be more than 2 characters'),
     ticket_price: Yup.number().positive().required('Ticket price is required'),
     ticket_count: Yup.number().positive().required('Ticket amount is required'),

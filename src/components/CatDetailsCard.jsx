@@ -40,7 +40,7 @@ const CatDetailsCard = () => {
     <div className="">
       {cat && cat.map(({ id, name, breed, age, image, breeder }) => (
       <Card className="shadow m-3 p-2" key={id}>
-      <img src={image} width='100%' className='mt-3 mx-auto d-block img-thumbnail rounded' alt='Cat Photo'/>
+      <img src={image} width='100%' className='mt-3 mx-auto d-block img-thumbnail rounded' alt='Cat'/>
       <Row>
         <Col>
           <Card.Text className="fs-2">Name:</Card.Text>

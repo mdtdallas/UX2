@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Form, Container, Button, Nav, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-//import logo from '../../img/logo.jpeg'
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Alert, Snackbar } from "@mui/material";
@@ -25,6 +24,7 @@ const SignUp = () => {
     }
     setOpen(false);
     window.location.href = '/signin'
+    action();
   };
 
   const action = (
@@ -48,7 +48,7 @@ const SignUp = () => {
   let validationParams = Yup.object().shape({
     email: Yup.string().required("Email is required"),
     name: Yup.string().required(),
-    phone: Yup.number().required(),
+    phone: Yup.number().required().max(10).min(10),
     password: Yup.string().required("Password is required"),
     confirm: Yup.string().required().oneOf([Yup.ref("password"), null], "Passwords must match"),
     agree: Yup.bool().oneOf([true], "Accept Ts & Cs is required"),
@@ -64,7 +64,7 @@ const SignUp = () => {
     },
     validationSchema: validationParams,
     onSubmit: values => {
-      const res = fetch('https://proj2-api.herokuapp.com/api/users/create', {
+        fetch('https://proj2-api.herokuapp.com/api/users/create', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(values)
@@ -105,7 +105,7 @@ const SignUp = () => {
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="name"
-            placeholder="name"
+            placeholder="Name"
             name="name"
             onChange={formik.handleChange}
             value={formik.values.name}
@@ -119,7 +119,7 @@ const SignUp = () => {
           <Form.Label>Phone</Form.Label>
           <Form.Control
             type="phone"
-            placeholder="phone"
+            placeholder="Phone"
             name="phone"
             onChange={formik.handleChange}
             value={formik.values.phone}
@@ -174,12 +174,15 @@ const SignUp = () => {
           Submit
         </Button>
       </Form>
+
       <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
         <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
          {[success, warning, error]}
         </Alert>
       </Snackbar>
+      
     </Container>
+
   );
 };
 

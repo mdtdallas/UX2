@@ -11,7 +11,7 @@ const NewAward = () => {
 
   let validationParams = Yup.object().shape({
     title: Yup.string().required("Award Title required"),
-    year: Yup.string()
+    year: Yup.number()
       .required("Year is required")
       .max(5, "Enter year only")
       .min(4),
@@ -59,6 +59,7 @@ const NewAward = () => {
     }
     setOpen(false);
     window.location.href = '/'
+    action();
   };
 
   const action = (
@@ -87,6 +88,7 @@ const NewAward = () => {
           <Col className="col-7">
             <Form.Control
               name="title"
+              pattern='[A-Za-z]{3}'
               onChange={formik.handleChange}
               value={formik.values.title}
               onBlur={formik.handleBlur}
@@ -103,6 +105,7 @@ const NewAward = () => {
           <Col className="col-7">
             <Form.Control
               name="year"
+              pattern='[0-9]{4,4}'
               onChange={formik.handleChange}
               value={formik.values.year}
               onBlur={formik.handleBlur}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Col, Row, Container, Card, Button } from "react-bootstrap";
 import { Spinner } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -36,7 +37,6 @@ function Shows() {
 
   return (
     <div>
-      
       {loading && (
         <div>
           <Spinner className="my-auto" />
@@ -47,22 +47,40 @@ function Shows() {
       )}
       <div>
         { shows.map(({ id, title, location, image, date }) => (
-            <>
-            <Link class="card shadow-md m-2 nav-link p-0 text-dark mb-4" to={`/show/${id}`} key={id}>
-              <img src={image} alt="Cat Show Title Cover" width="100%" height="100%"/>
-            {/* <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns={image} role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> */}
-            <div class="card-title text-center p-10 mt-20">{title}</div>
-            <div class="card-body">
-              <p class="card-text text-center">Where:&nbsp;{location}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Enter Show</button>
-                </div>
-                <small class="card-text">When:&nbsp;{date}</small>
-              </div>
+            <div key={id}>
+              <Container>
+                <Card
+                  as={Link}
+                  to={`/show/${id}`}
+                  className="rounded-50 shadow mb-2 nav-link text-dark"
+                >
+                  <Row>
+                    <div className="text-center display-5">{title}</div>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <img
+                        src={image}
+                        alt="title image for show"
+                        className="showImage m-4 me-6"
+                        width='40%'
+                      />
+                    </Col>
+                    <Col>
+                      <Row>
+                        <div className="fs-4 pt-2">{date}</div>
+                      </Row>
+                      <Row>
+                        <div className="fs-4 pt-2">{location}</div>
+                      </Row>
+                      <Button as={Link} to={`/show/${id}`} className="fs-4 mt-2">
+                        Enter Show
+                      </Button>
+                    </Col>
+                  </Row>
+                </Card>
+              </Container>
             </div>
-          </Link>
-            </>
           ))}
       </div>
     </div>
@@ -70,5 +88,3 @@ function Shows() {
 }
 
 export default Shows;
-
-

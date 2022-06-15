@@ -10,7 +10,7 @@ const NewCatForm = () => {
   const [status, setStatus] = useState('')
 
   let validationParams = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
+    name: Yup.string().required("Name is required").matches(/^[aA-zZ\s]+$/, 'Please enter valid name'),
     breed: Yup.string()
       .required("Breed is required")
       .min(2, "Must be more than 2 characters"),
@@ -60,6 +60,7 @@ const NewCatForm = () => {
     }
     setOpen(false);
     window.location.href = '/'
+    action();
   };
 
   const action = (
