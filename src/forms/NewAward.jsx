@@ -11,7 +11,7 @@ const NewAward = () => {
 
   let validationParams = Yup.object().shape({
     title: Yup.string().required("Award Title required"),
-    year: Yup.number().required("Year is required")
+    year: Yup.number().min(2000).required("Year is required")
   });
   let formik = useFormik({
     initialValues: {
