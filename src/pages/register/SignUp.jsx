@@ -106,6 +106,7 @@ const SignUp = () => {
           <Form.Control
             type="name"
             placeholder="Name"
+            pattern='[a-zA-Z\s]+{3,}'
             name="name"
             onChange={formik.handleChange}
             value={formik.values.name}
@@ -120,6 +121,8 @@ const SignUp = () => {
           <Form.Control
             type="phone"
             placeholder="Phone"
+            pattern="[0-9]"
+            maxLength={10}
             name="phone"
             onChange={formik.handleChange}
             value={formik.values.phone}

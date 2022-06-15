@@ -102,7 +102,7 @@ function ShowForm() {
               <Form.Label className='p-2'>Title:</Form.Label>
             </Col>
             <Col>
-              <Form.Control name="title" onChange={formik.handleChange} value={formik.values.title} onBlur={formik.handleBlur}/>
+              <Form.Control name="title" pattern='[a-zA-Z0-9\s]+{3,}' onChange={formik.handleChange} value={formik.values.title} onBlur={formik.handleBlur}/>
               {formik.errors.title && formik.touched.title ? (<p>{formik.errors.title}</p>) : null}
             </Col>
           </Row>
@@ -111,7 +111,7 @@ function ShowForm() {
               <Form.Label className='p-2'>Location:</Form.Label>
             </Col>
             <Col>
-              <Form.Control name="location" onChange={formik.handleChange} value={formik.values.location} onBlur={formik.handleBlur}/>
+              <Form.Control name="location" pattern='[a-zA-Z0-9\s]+{3,}' onChange={formik.handleChange} value={formik.values.location} onBlur={formik.handleBlur}/>
               {formik.errors.location && formik.touched.location ? (<p>{formik.errors.location}</p>) : null}
             </Col>
           </Row>
@@ -120,7 +120,7 @@ function ShowForm() {
               <Form.Label className='p-2'>Photo:</Form.Label>
             </Col>
             <Col>
-              <Form.Control name="photo" onChange={formik.handleChange} value={formik.values.photo} onBlur={formik.handleBlur}/>
+              <Form.Control name="photo" type="url" onChange={formik.handleChange} value={formik.values.photo} onBlur={formik.handleBlur}/>
               {formik.errors.photo && formik.touched.photo ? (<p>{formik.errors.photo}</p>) : null}
             </Col>
           </Row>
@@ -129,7 +129,7 @@ function ShowForm() {
               <Form.Label className='p-2'>Judge:</Form.Label>
             </Col>
             <Col>
-              <Form.Control name="judges" onChange={formik.handleChange} value={formik.values.judges} onBlur={formik.handleBlur}/>
+              <Form.Control name="judges" pattern='[a-zA-Z0-9\s]+{3,}' onChange={formik.handleChange} value={formik.values.judges} onBlur={formik.handleBlur}/>
               {formik.errors.judges && formik.touched.judges ? (<p>{formik.errors.judges}</p>) : null}
             </Col>
           </Row>
@@ -147,7 +147,7 @@ function ShowForm() {
               <Form.Label className='p-2'>Council:</Form.Label>
             </Col>
             <Col>
-              <Form.Control name="council" onChange={formik.handleChange} value={formik.values.council} onBlur={formik.handleBlur}/>
+              <Form.Control name="council" pattern='[a-zA-Z0-9\s]+{3,}' onChange={formik.handleChange} value={formik.values.council} onBlur={formik.handleBlur}/>
               {formik.errors.council && formik.touched.council ? (<p>{formik.errors.council}</p>) : null}
             </Col>
           </Row>
@@ -156,7 +156,7 @@ function ShowForm() {
               <Form.Label className='p-2'>Ticket Price:</Form.Label>
             </Col>
             <Col>
-              <Form.Control name="ticket_price" onChange={formik.handleChange} value={formik.values.ticket_price} onBlur={formik.handleBlur}/>
+              <Form.Control name="ticket_price" type="number" min={0} pattern='[0-9]+{1,}' onChange={formik.handleChange} value={formik.values.ticket_price} onBlur={formik.handleBlur}/>
               {formik.errors.ticket_price && formik.touched.ticket_price ? (<p>{formik.errors.ticket_price}</p>) : null}
             </Col>
           </Row>
@@ -165,7 +165,7 @@ function ShowForm() {
               <Form.Label className='p-2'>Ticket Amount:</Form.Label>
             </Col>
             <Col>
-              <Form.Control name="ticket_count" onChange={formik.handleChange} value={formik.values.ticket_count} onBlur={formik.handleBlur}/>
+              <Form.Control name="ticket_count" type="number" min={0} pattern='[0-9]+{1,}' onChange={formik.handleChange} value={formik.values.ticket_count} onBlur={formik.handleBlur}/>
               {formik.errors.ticket_count && formik.touched.ticket_count ? (<p>{formik.errors.ticket_count}</p>) : null}
             </Col>
           </Row>

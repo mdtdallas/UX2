@@ -91,6 +91,7 @@ const NewCatForm = () => {
               <Col>
                 <Form.Control
                   name="name"
+                  pattern='[a-zA-Z\s]+{3}'
                   onChange={formik.handleChange}
                   value={formik.values.name}
                   onBlur={formik.handleBlur}
@@ -107,6 +108,7 @@ const NewCatForm = () => {
               <Col>
                 <Form.Control
                   name="breed"
+                  pattern='[a-zA-Z\s]+{3}'
                   onChange={formik.handleChange}
                   value={formik.values.breed}
                   onBlur={formik.handleBlur}
@@ -123,6 +125,8 @@ const NewCatForm = () => {
               <Col>
                 <Form.Control
                   name="age"
+                  pattern="[0-9]{1,}"
+                  maxLength={2}
                   onChange={formik.handleChange}
                   value={formik.values.age}
                   onBlur={formik.handleBlur}
@@ -139,6 +143,7 @@ const NewCatForm = () => {
               <Col>
                 <Form.Control
                   name="image"
+                  type="url"
                   onChange={formik.handleChange}
                   value={formik.values.image}
                   onBlur={formik.handleBlur}
@@ -155,6 +160,7 @@ const NewCatForm = () => {
               <Col>
                 <Form.Control
                   name="breeder"
+                  pattern='[a-zA-Z\s]+{3}'
                   onChange={formik.handleChange}
                   value={formik.values.breeder}
                   onBlur={formik.handleBlur}
