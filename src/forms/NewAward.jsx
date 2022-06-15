@@ -11,9 +11,7 @@ const NewAward = () => {
 
   let validationParams = Yup.object().shape({
     title: Yup.string().required("Award Title required"),
-    year: Yup.number()
-      .required("Year is required")
-      .min(3),
+    year: Yup.number().required("Year is required")
   });
   let formik = useFormik({
     initialValues: {
@@ -104,6 +102,7 @@ const NewAward = () => {
           <Col className="col-7">
             <Form.Control
               name="year"
+              type="number"
               pattern='[0-9]'
               maxLength={4}
               onChange={formik.handleChange}
