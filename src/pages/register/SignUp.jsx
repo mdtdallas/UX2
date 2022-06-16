@@ -48,7 +48,7 @@ const SignUp = () => {
   let validationParams = Yup.object().shape({
     email: Yup.string().required("Email is required"),
     name: Yup.string().required(),
-    phone: Yup.number().required().max(10).min(10),
+    phone: Yup.number().required(),
     password: Yup.string().required("Password is required"),
     confirm: Yup.string().required().oneOf([Yup.ref("password"), null], "Passwords must match"),
     agree: Yup.bool().oneOf([true], "Accept Ts & Cs is required"),
