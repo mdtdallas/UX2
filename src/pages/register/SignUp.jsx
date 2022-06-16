@@ -121,7 +121,7 @@ const SignUp = () => {
           <Form.Control
             type="phone"
             placeholder="Phone"
-            pattern="[0-9]+{10,}"
+            pattern="[0-9]+"
             maxLength={10}
             name="phone"
             onChange={formik.handleChange}
